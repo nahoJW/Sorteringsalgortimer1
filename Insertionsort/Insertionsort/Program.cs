@@ -11,7 +11,7 @@ namespace Insertionsort
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            int antalTal = 10; //antal tal
+            int antalTal = 1000; //antal tal
             int temp;//variabel för att lagra temporärt värde
             int[] array = new int[antalTal]; //lista med antal tal
             Random random = new Random(); //skapar en random variabel
@@ -34,7 +34,7 @@ namespace Insertionsort
             }
 
             foreach (int i2 in array)
-                Console.WriteLine(i2 + " ");
+                Console.Write(i2 + ", ");
             sw.Stop();
             TimeSpan elapsedTime = sw.Elapsed;
             Console.WriteLine("RunTime " + elapsedTime);
