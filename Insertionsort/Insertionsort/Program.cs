@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Insertionsort
 {
@@ -6,6 +8,9 @@ namespace Insertionsort
     {
         static void Main(string[] args)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             int antalTal = 10; //antal tal
             int temp;//variabel för att lagra temporärt värde
             int[] array = new int[antalTal]; //lista med antal tal
@@ -28,8 +33,11 @@ namespace Insertionsort
                 array[i1 + 1] = temp; //talelt som jämförts infogas i på rätt plats
             }
 
-            foreach (int c in array)
-                Console.WriteLine(c + " ");
+            foreach (int i2 in array)
+                Console.WriteLine(i2 + " ");
+            sw.Stop();
+            TimeSpan elapsedTime = sw.Elapsed;
+            Console.WriteLine("RunTime " + elapsedTime);
         }
     }
 }
